@@ -19,5 +19,6 @@ public enum Move {
             return ROCK;
         }
     };
+
     public abstract Move losesTo();
 }

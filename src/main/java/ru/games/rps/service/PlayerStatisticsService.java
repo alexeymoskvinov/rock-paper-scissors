@@ -24,6 +24,7 @@ public class PlayerStatisticsService {
 
     /**
      * get player statistic by player id
+     *
      * @param id player id
      * @return player statistic
      */
@@ -34,6 +35,7 @@ public class PlayerStatisticsService {
 
     /**
      * update player statistics
+     *
      * @param playerId player id
      * @param result   result of round
      */
@@ -61,6 +63,7 @@ public class PlayerStatisticsService {
 
     /**
      * find player statistics by id
+     *
      * @param id player id
      * @return player statistics
      */

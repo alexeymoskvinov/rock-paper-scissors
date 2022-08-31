@@ -12,7 +12,7 @@ import ru.games.rps.entity.Result;
 import ru.games.rps.repository.GameRepository;
 import ru.games.rps.repository.RoundRepository;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class RoundServiceTest extends BaseTest {
 

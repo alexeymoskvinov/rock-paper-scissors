@@ -2,13 +2,6 @@ package ru.games.rps.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.games.rps.entity.PlayerStatistics;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @NoArgsConstructor

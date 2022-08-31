@@ -1,15 +1,9 @@
 package ru.games.rps.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import ru.games.rps.entity.Game;
 import ru.games.rps.entity.Move;
 import ru.games.rps.entity.Result;
-
-import javax.persistence.*;
 
 @Data
 @NoArgsConstructor

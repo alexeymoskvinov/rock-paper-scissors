@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.games.rps.dto.PlayerStatisticsDto;
-import ru.games.rps.entity.PlayerStatistics;
 import ru.games.rps.service.PlayerStatisticsService;
 
 /**
@@ -21,6 +20,7 @@ public class PlayerStatisticsController {
 
     /**
      * get player statistic
+     *
      * @param id player id
      * @return player statistic
      */

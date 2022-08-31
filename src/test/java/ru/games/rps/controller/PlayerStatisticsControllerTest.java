@@ -7,15 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import ru.games.rps.BaseTest;
-import ru.games.rps.dto.GameDto;
 import ru.games.rps.dto.PlayerStatisticsDto;
 import ru.games.rps.entity.PlayerStatistics;
-import ru.games.rps.entity.Status;
 import ru.games.rps.mapper.PlayerStatisticsMapper;
 import ru.games.rps.repository.PlayerStatisticsRepository;
-import ru.games.rps.service.PlayerStatisticsService;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PlayerStatisticsControllerTest extends BaseTest {
     @Autowired

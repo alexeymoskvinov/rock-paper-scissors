@@ -1,9 +1,5 @@
 package ru.games.rps.controller;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,11 +14,8 @@ import ru.games.rps.dto.RoundDto;
 import ru.games.rps.entity.Game;
 import ru.games.rps.entity.Move;
 import ru.games.rps.entity.Status;
-import ru.games.rps.mapper.GameMapper;
 import ru.games.rps.repository.GameRepository;
 import ru.games.rps.repository.RoundRepository;
-
-import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

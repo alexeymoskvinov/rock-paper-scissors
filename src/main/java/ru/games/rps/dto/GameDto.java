@@ -4,8 +4,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.games.rps.entity.Status;
 
-import java.util.Objects;
-
 @Data
 @NoArgsConstructor
 public class GameDto {
