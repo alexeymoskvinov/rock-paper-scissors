@@ -1,7 +1,9 @@
 package ru.games.rps.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.games.rps.dto.PlayerStatisticsDto;
 import ru.games.rps.entity.PlayerStatistics;
 import ru.games.rps.entity.Result;
@@ -15,6 +17,7 @@ import javax.persistence.EntityNotFoundException;
  */
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class PlayerStatisticsService {
     private final PlayerStatisticsRepository playerStatisticsRepository;
     private final PlayerStatisticsMapper playerStatisticsMapper;
@@ -24,6 +27,7 @@ public class PlayerStatisticsService {
      * @param id player id
      * @return player statistic
      */
+    @Transactional(readOnly = true)
     public PlayerStatisticsDto getById(Long id) {
         return playerStatisticsMapper.fromEntity(findById(id));
     }
@@ -33,6 +37,7 @@ public class PlayerStatisticsService {
      * @param playerId player id
      * @param result   result of round
      */
+    @Transactional
     public void update(Long playerId, Result result) {
         PlayerStatistics playerStatistics;
         try {
@@ -51,6 +56,7 @@ public class PlayerStatisticsService {
         }
 
         playerStatisticsRepository.save(playerStatistics);
+        log.info("A player statistics with id = {} has been updated", playerId);
     }
 
     /**
@@ -62,6 +68,7 @@ public class PlayerStatisticsService {
         return playerStatisticsRepository
                 .findById(id)
                 .orElseThrow(() -> {
+                    log.error("Player statistics not found by player id = {}", id);
                     throw new EntityNotFoundException("Player statistics not found by id = " + id);
                 });
     }

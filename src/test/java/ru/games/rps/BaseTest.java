@@ -1,5 +1,7 @@
 package ru.games.rps;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.lifecycle.Startables;
 
+import java.io.IOException;
 import java.util.stream.Stream;
 
 @SpringBootTest
@@ -39,5 +42,15 @@ public abstract class BaseTest {
 	public void cleanAndMigrate() {
 		flyway.clean();
 		flyway.migrate();
+	}
+
+	protected String mapToJson(Object obj) throws JsonProcessingException {
+		ObjectMapper objectMapper = new ObjectMapper();
+		return objectMapper.writeValueAsString(obj);
+	}
+
+	protected <T> T mapFromJson(String json, Class<T> clazz) throws IOException {
+		ObjectMapper objectMapper = new ObjectMapper();
+		return objectMapper.readValue(json, clazz);
 	}
 }
